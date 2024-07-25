@@ -4,20 +4,14 @@ const app = express();
 const helmet = require('helmet');
 
 
-// Use Helmet to enhance API's security
-app.use(helmet());
+const express = require('express');
+const helmet = require('helmet');
 
-// Remove the X-Powered-By header
+const app = express();
+
 app.use(helmet.hidePoweredBy());
 
-app.get('/', (req, res) => {
-  res.send('Hello, secure world!');
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Rest of your Express app
 
 
 
